@@ -12,7 +12,7 @@ class Operator:
             agent_inputs = ['web_search_aggregate_output']
             if dora_event['id'] in agent_inputs:
                 task_result = json.loads(dora_event["value"][0].as_py())
-                print(f'web_search_output   : {task_result}')
+                print(f'{task_result}')
                 send_output("web_search_output", pa.array([json.dumps(task_result)]), dora_event['metadata'])
                 send_output("web_search_results", pa.array([json.dumps({'web_search_results':task_result.get('web_search_results')})]), dora_event['metadata'])
                 send_output("web_search_resource", pa.array([json.dumps({'web_search_resource':task_result.get('web_search_resource')})]), dora_event['metadata'])
