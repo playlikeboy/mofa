@@ -50,9 +50,9 @@ class Operator:
                 log_result['3, Web Search Answer '] = result.get('web_search_results')
                 write_agent_log(log_type=inputs.get('log_type',None),log_file_path=inputs.get('log_path',None),data=log_result)
                 result['task'] = task
-                print(result)
                 send_output("web_search_aggregate_output", pa.array([json.dumps(result)]),dora_event['metadata'])
                 send_output("web_search_results", pa.array([json.dumps({'web_search_results':result.get('web_search_results')})]),dora_event['metadata'])
                 send_output("web_search_resource", pa.array([json.dumps({'web_search_resource':result.get('web_search_resource')})]),dora_event['metadata'])
+                print(result)
 
         return DoraStatus.CONTINUE
