@@ -30,15 +30,15 @@ def main():
         required=False,
         help="Objects to be evaluated",
     )
-
     args = parser.parse_args()
-
     node = Node(
         args.name
     )
     for event in node:
         if event["type"] == "INPUT" and event['id'] in ['task','data','evaluation_data']:
             evaluation_data = event["value"][0].as_py()
+            if isinstance(evaluation_data, dict): evaluation_data = json.dumps(evaluation_data)
+
             yaml_file_path = f'{agent_config_dir_path}/content_evaluation_agent.yml'
             inputs = load_agent_config(yaml_file_path)
             if inputs.get('check_log_prompt', None) is True:
@@ -59,8 +59,8 @@ def main():
             write_agent_log(log_type=inputs.get('log_type', None), log_file_path=inputs.get('log_path', None),
                             data=log_result)
             results['result'] = result
-            print('content_evaluation_result:', results)
-            node.send_output("content_evaluation_result", pa.array([json.dumps(results)]), event['metadata'])
+            print('evaluation_result:', results)
+            node.send_output("evaluation_result", pa.array([json.dumps(results)]), event['metadata'])
 
 
 if __name__ == "__main__":
