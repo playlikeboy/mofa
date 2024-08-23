@@ -13,8 +13,7 @@ from mae.utils.files.read import read_yaml
 
 
 class Operator:
-    inputs_data = []
-    agents_inputs = ['web_search_task']
+
     def on_event(
         self,
         dora_event,
