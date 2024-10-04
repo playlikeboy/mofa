@@ -25,10 +25,9 @@ config = {
     }
 
 }
-os.environ["OPENAI_API_BASE"] = "https://api.siliconflow.cn/v1/"
-os.environ["OPENAI_API_KEY"] = " "
-
-m = Memory.from_config(config)
-result = m.add("Likes to play cricket on weekends", user_id="alice", metadata={"category": "hobbies"})
-related_memories = m.search(query="What are Alice's hobbies?", user_id="alice")
-print(related_memories)
+# os.environ["OPENAI_API_BASE"] = "https://api.siliconflow.cn/v1/"
+# os.environ["OPENAI_API_KEY"] = "sk"
+#
+# m = Memory.from_config(config)
+# related_memories = m.search(query="黑神话悟空", user_id="mofa")
+# print(related_memories)
