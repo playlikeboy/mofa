@@ -77,12 +77,6 @@
     git clone https://gitcode.com/您的用户名/mofa.git
     ```
 
-    - 如果您未 Fork 项目，可以直接克隆官方仓库：
-
-    ```bash
-    git clone https://gitcode.com/moxin-org/mofa.git
-    ```
-
     - 克隆成功后，当前目录下会创建一个名为 `mofa` 的文件夹。
 
 ### 3.2 更新代码环境
@@ -90,7 +84,7 @@
 1. **进入项目目录**：
 
     ```bash
-    cd mofa/python
+    cd {project_name}/python
     ```
 
 2. **更新依赖包**：
@@ -105,7 +99,7 @@
 
 1. **运行示例**：
 
-    - 在 `mofa/python/examples` 目录下，有一些示例代码供参考。
+    - 在 `{project_name}/python/examples` 目录下，有一些示例代码供参考。
     - 您可以在 Notebook 界面中打开这些示例，尝试运行，确保环境配置正确。
 
 2. **验证环境**：
@@ -139,7 +133,7 @@
 1. **创建案例目录**：
 
     ```bash
-    cd mofa/Hackathon/projects
+    cd {project_name}/Hackathon/projects
     mkdir 您的团队名称
     cd 您的团队名称
     ```
@@ -334,5 +328,5 @@
 
     - 更多关于 GitCode 的使用，可以参考 [GitCode 帮助中心](https://gitcode.net/help)。
 
----
+
 
