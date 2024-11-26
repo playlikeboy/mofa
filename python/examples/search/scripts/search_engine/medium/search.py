@@ -490,10 +490,8 @@ def login_medium(search_text:str,url:str='https://medium.com/',login_email:str='
 if __name__ == '__main__':
     search_text = 'ai agent'
     html_source = login_medium(search_text=search_text)
-
-
     clena_html_source = clean_html_js_and_style(html_source)
-    api_key = "***REMOVED***"
+    api_key = " "
     client = OpenAI(api_key=api_key)
     result = process_large_html_content(html_content=clena_html_source,llm_client=client,search_text=search_text)
     print(result)
