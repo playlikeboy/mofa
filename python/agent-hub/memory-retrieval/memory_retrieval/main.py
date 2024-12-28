@@ -12,8 +12,6 @@ import pyarrow as pa
 RUNNER_CI = True if os.getenv("CI") == "true" else False
 
 class MemoryRetrievalAgent(BaseMofaAgent):
-    
-    
     def load_config(self, config_path: str = None) -> Dict[str, Any]:
         if config_path is None:
             config_path = self.config_path
@@ -80,12 +78,9 @@ def main():
             memmory = MemoryRetrievalAgent(config_path=os.path.join(os.path.abspath(os.path.dirname(__file__)), ) + '/configs/config.yml',
                                 llm_config_path=os.path.join(os.path.abspath(os.path.dirname(__file__)), ) + '/.env.secret')
             result = memmory.run(task=task)
-            # memmory.send_output(node=node,output_name='memeory_retrieval_result',output_data=result,is_end_dataflow=os.getenv('IS_DATAFLOW_END',True),
-            #                     event=event,)
-            print('memeory_retrieval_result : ',result)
-            output_name = 'memeory_retrieval_result'
-            node.send_output(output_name, pa.array([create_agent_output(step_name=output_name, output_data=result,dataflow_status=os.getenv('IS_DATAFLOW_END',True))]), event['metadata'])
-        event = node.next(timeout=200)
+            output_name = 'memory_retrieval_result'
+            node.send_output(output_name, pa.array([create_agent_output(step_name=output_name, output_data=result,dataflow_status=os.getenv('IS_DATAFLOW_END',False))]), event['metadata'])
+        # event = node.next(timeout=200)
 if __name__ == "__main__":
     main()
     # mem0 = MemoryRetrievalAgent(config_path=os.path.join(os.path.abspath(os.path.dirname(__file__)), ) + '/configs/config.yml',
