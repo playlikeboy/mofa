@@ -10,7 +10,7 @@ license = "MIT License"
 homepage = "https://github.com/moxin-org/mofa"
 documentation = "https://github.com/moxin-org/mofa/blob/main/README.md"
 readme = "README.md"
-packages = [{ include = "create-agent-main" }]
+packages = [{ include = "create_agent_main" }]
 
 [tool.poetry.dependencies]
 pyarrow = ">= 5.0.0"
