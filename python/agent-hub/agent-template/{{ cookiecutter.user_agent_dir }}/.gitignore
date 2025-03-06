@@ -5,3 +5,4 @@ data/**
 ./**/.env.secret
 ./**/.db
 ./**/.env
+logs/
