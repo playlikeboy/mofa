@@ -15,6 +15,7 @@ packages = [{ include = "memory_retrieval" }]
 [tool.poetry.dependencies]
 pyarrow = ">= 5.0.0"
 mem0ai = ">=0.1.35"
+flask = "*"
 [tool.poetry.scripts]
 memory-retrieval = "memory_retrieval.main:main"
 
@@ -22,5 +23,3 @@ memory-retrieval = "memory_retrieval.main:main"
 requires = ["poetry-core>=1.8.0"]
 build-backend = "poetry.core.masonry.api"
 
-[project]
-readme = "README.md"
